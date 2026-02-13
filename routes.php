@@ -2,24 +2,20 @@
 
 $url = $_GET['url'] ?? '/';
 
-switch ($url) {
+$routes = [
 
-    case '/':
-        require 'app/controllers/DashboardController.php';
-        break;
+    '/' => 'DashboardController',
+    'products' => 'ProductController',
+    'boxes' => 'BoxController',
+    'alerts' => 'AlertController',
+    'login' => 'AuthController',
 
-    case 'products':
-        require 'app/controllers/ProductController.php';
-        break;
+];
 
-    case 'boxes':
-        require 'app/controllers/BoxController.php';
-        break;
+if (array_key_exists($url, $routes)) {
 
-    case 'alerts':
-        require 'app/controllers/AlertController.php';
-        break;
-
-    default:
-        echo "404";
+    require __DIR__ . "/app/controllers/{$routes[$url]}.php";
+} else {
+    http_response_code(404);
+    echo "404 - Página no encontrada";
 }

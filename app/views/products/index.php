@@ -1,3 +1,5 @@
+<?php require 'app/middleware/AuthMiddleware.php'; ?>
+
 <h1>Productos</h1>
 
 <form method="POST">
