@@ -6,7 +6,7 @@
     <!-- Header -->
     <div class="mb-8 flex justify-between items-center">
         <h1 class="text-4xl font-bold text-gray-800">Gestión de Sedes</h1>
-        <a href="/claude/index.php?action=crear_sede" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition">
+        <a href="/index.php?action=crear_sede" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition">
             + Crear Sede
         </a>
     </div>
@@ -16,7 +16,7 @@
         <?php if (empty($sedes)): ?>
             <div class="col-span-3 bg-white rounded-lg shadow p-12 text-center">
                 <p class="text-xl text-gray-500 mb-4">No hay sedes registradas</p>
-                <a href="/claude/index.php?action=crear_sede" class="text-blue-600 hover:text-blue-800 font-semibold">
+                <a href="/index.php?action=crear_sede" class="text-blue-600 hover:text-blue-800 font-semibold">
                     Crear la primera sede →
                 </a>
             </div>
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="flex gap-2">
-                        <a href="/claude/index.php?action=editar_sede&id=<?php echo $sede['id']; ?>" 
+                        <a href="/index.php?action=editar_sede&id=<?php echo $sede['id']; ?>" 
                            class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-center font-semibold">
                             Editar
                         </a>

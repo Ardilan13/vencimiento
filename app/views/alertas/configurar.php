@@ -4,7 +4,7 @@
 
 <div class="container mx-auto px-4 py-8 max-w-2xl">
     <div class="mb-8">
-        <a href="/claude/index.php?action=alertas" class="text-blue-600 hover:text-blue-800 font-semibold">
+        <a href="/index.php?action=alertas" class="text-blue-600 hover:text-blue-800 font-semibold">
             ← Volver a alertas
         </a>
     </div>
@@ -23,7 +23,7 @@
             </div>
         <?php endif; ?>
 
-        <form method="POST" action="/claude/index.php?action=configurar_alertas" class="space-y-8">
+        <form method="POST" action="/index.php?action=configurar_alertas" class="space-y-8">
             
             <!-- Información de tipos de alerta -->
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
@@ -121,7 +121,7 @@
                 <button type="submit" class="flex-1 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition font-semibold">
                     💾 Guardar Configuración
                 </button>
-                <a href="/claude/index.php?action=alertas" class="flex-1 bg-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-400 transition font-semibold text-center">
+                <a href="/index.php?action=alertas" class="flex-1 bg-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-400 transition font-semibold text-center">
                     Cancelar
                 </a>
             </div>

@@ -110,7 +110,7 @@ try {
             break;
 
         default:
-            header('Location: /claude/index.php?action=login');
+            header('Location: /index.php?action=login');
             exit;
     }
 } catch (Exception $e) {

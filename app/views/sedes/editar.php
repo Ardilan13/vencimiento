@@ -4,7 +4,7 @@
 
 <div class="container mx-auto px-4 py-8 max-w-2xl">
     <div class="mb-8">
-        <a href="/claude/index.php?action=sedes" class="text-blue-600 hover:text-blue-800 font-semibold">
+        <a href="/index.php?action=sedes" class="text-blue-600 hover:text-blue-800 font-semibold">
             ← Volver a sedes
         </a>
     </div>
@@ -24,7 +24,7 @@
             </div>
         <?php endif; ?>
 
-        <form method="POST" action="/claude/index.php?action=editar_sede&id=<?php echo $sede['id']; ?>" class="space-y-6">
+        <form method="POST" action="/index.php?action=editar_sede&id=<?php echo $sede['id']; ?>" class="space-y-6">
             
             <!-- Nombre -->
             <div>
@@ -87,7 +87,7 @@
                 <button type="submit" class="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition font-semibold">
                     Guardar Cambios
                 </button>
-                <a href="/claude/index.php?action=sedes" class="flex-1 bg-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-400 transition font-semibold text-center">
+                <a href="/index.php?action=sedes" class="flex-1 bg-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-400 transition font-semibold text-center">
                     Cancelar
                 </a>
             </div>

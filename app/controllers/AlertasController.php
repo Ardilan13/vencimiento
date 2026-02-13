@@ -81,7 +81,7 @@ class AlertasController extends BaseController {
         }
 
         if ($resultado) {
-            header('Location: /claude/index.php?action=alertas&mensaje=Configuración guardada correctamente');
+            header('Location: /index.php?action=alertas&mensaje=Configuración guardada correctamente');
             exit;
         } else {
             return $this->renderizar('alertas/configurar', [
