@@ -1,7 +1,7 @@
 <?php
 // app/views/auth/login.php
 ?>
-<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 p-4">
+<div class="min-h-screen flex items-center justify-center p-4">
     <div class="w-full max-w-md">
         <!-- Card Principal -->
         <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
