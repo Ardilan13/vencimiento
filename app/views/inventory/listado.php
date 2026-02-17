@@ -7,7 +7,7 @@
         <h3 class="text-lg font-bold text-gray-800 mb-4">
             <i class="fas fa-filter text-purple-600 mr-2"></i> Filtrar Inventario
         </h3>
-        <form method="GET" action="/index.php?action=inventory" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <form method="GET" action="/vencimiento/index.php?action=inventory" class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <input type="hidden" name="action" value="inventory">
             
             <!-- Sede -->
@@ -60,10 +60,10 @@
 
     <!-- Acciones -->
     <div class="flex gap-3">
-        <a href="/index.php?action=crear_producto" class="btn-primary">
+        <a href="/vencimiento/index.php?action=crear_producto" class="btn-primary">
             <i class="fas fa-plus mr-2"></i> Crear Producto
         </a>
-        <a href="/index.php?action=agregar_lote" class="btn-primary">
+        <a href="/vencimiento/index.php?action=agregar_lote" class="btn-primary">
             <i class="fas fa-cube mr-2"></i> Agregar Lote
         </a>
     </div>
@@ -124,7 +124,7 @@
                                     <?php endif; ?>
                                 </td>
                                 <td class="px-6 py-4 text-sm">
-                                    <a href="/index.php?action=detalles_producto&id=<?php echo $item['producto_id']; ?>" 
+                                    <a href="/vencimiento/index.php?action=detalles_producto&id=<?php echo $item['producto_id']; ?>" 
                                        class="text-purple-600 hover:text-purple-800 font-semibold mr-3">
                                         <i class="fas fa-eye"></i> Ver
                                     </a>

@@ -140,7 +140,7 @@ proyecto/
 
 ### "Archivo no encontrado" (Error 404)
 ```
-✓ Usa URL: http://localhost:8000/index.php?action=login
+✓ Usa URL: http://localhost:8000/vencimiento/index.php?action=login
 ✓ Verifica que todos los archivos están en su lugar
 ```
 

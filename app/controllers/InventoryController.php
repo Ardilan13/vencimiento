@@ -131,7 +131,7 @@ class InventoryController extends BaseController
         $stmt->bind_param('ssisddi', $nombre, $codigo_sku, $categoria_id, $descripcion, $precio_costo, $precio_venta, $stock_minimo);
 
         if ($stmt->execute()) {
-            header('Location: /index.php?action=inventory&mensaje=Producto creado correctamente');
+            header('Location: /vencimiento/index.php?action=inventory&mensaje=Producto creado correctamente');
             exit;
         } else {
             return $this->renderizar('inventory/crear_producto', [
@@ -216,7 +216,7 @@ class InventoryController extends BaseController
             $movStmt->bind_param('iii', $lote_id, $usuario_id, $cantidad);
             $movStmt->execute();
 
-            header('Location: /index.php?action=inventory&mensaje=Lote agregado correctamente');
+            header('Location: /vencimiento/index.php?action=inventory&mensaje=Lote agregado correctamente');
             exit;
         } else {
             return $this->renderizar('inventory/agregar_lote', [
@@ -233,7 +233,7 @@ class InventoryController extends BaseController
 
         $producto_id = $_GET['id'] ?? '';
         if (empty($producto_id)) {
-            header('Location: /index.php?action=inventory');
+            header('Location: /vencimiento/index.php?action=inventory');
             exit;
         }
 
@@ -242,7 +242,7 @@ class InventoryController extends BaseController
         $lotes = $this->obtenerLotesProducto($producto_id, $usuario['sede_id']);
 
         if (!$producto) {
-            header('Location: /index.php?action=inventory');
+            header('Location: /vencimiento/index.php?action=inventory');
             exit;
         }
 

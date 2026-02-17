@@ -45,7 +45,7 @@ class AuthController extends BaseController {
                     $updateStmt->bind_param('i', $usuario['id']);
                     $updateStmt->execute();
 
-                    header('Location: /index.php?action=dashboard');
+                    header('Location: /vencimiento/index.php?action=dashboard');
                     exit;
                 }
             }
@@ -57,7 +57,7 @@ class AuthController extends BaseController {
     public function logout() {
         session_start();
         session_destroy();
-        header('Location: /index.php?action=login');
+        header('Location: /vencimiento/index.php?action=login');
         exit;
     }
 
@@ -129,7 +129,7 @@ class AuthController extends BaseController {
             $_SESSION['user_id'] = $insertStmt->insert_id;
             $_SESSION['rol'] = $rol;
 
-            header('Location: /index.php?action=login&mensaje=Registro exitoso');
+            header('Location: /vencimiento/index.php?action=login&mensaje=Registro exitoso');
             exit;
         } else {
             $sedes = $this->obtenerSedes();

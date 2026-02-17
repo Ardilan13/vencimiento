@@ -96,7 +96,7 @@ class UsersController extends BaseController {
         $insertStmt->bind_param('ssssis', $nombre, $email, $passwordHash, $rol, $sede_id, $estado);
 
         if ($insertStmt->execute()) {
-            header('Location: /index.php?action=usuarios&mensaje=Usuario creado correctamente');
+            header('Location: /vencimiento/index.php?action=usuarios&mensaje=Usuario creado correctamente');
             exit;
         } else {
             return $this->renderizar('users/crear', [
@@ -113,7 +113,7 @@ class UsersController extends BaseController {
 
         $usuario_id = $_GET['id'] ?? '';
         if (empty($usuario_id)) {
-            header('Location: /index.php?action=usuarios');
+            header('Location: /vencimiento/index.php?action=usuarios');
             exit;
         }
 
@@ -123,7 +123,7 @@ class UsersController extends BaseController {
 
         $usuario_editar = $this->obtenerUsuarioPorId($usuario_id);
         if (!$usuario_editar) {
-            header('Location: /index.php?action=usuarios');
+            header('Location: /vencimiento/index.php?action=usuarios');
             exit;
         }
 
@@ -195,7 +195,7 @@ class UsersController extends BaseController {
         }
 
         if ($updateStmt->execute()) {
-            header('Location: /index.php?action=usuarios&mensaje=Usuario actualizado correctamente');
+            header('Location: /vencimiento/index.php?action=usuarios&mensaje=Usuario actualizado correctamente');
             exit;
         } else {
             return $this->renderizar('users/editar', [

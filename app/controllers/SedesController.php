@@ -70,7 +70,7 @@ class SedesController extends BaseController {
         $insertStmt->bind_param('sssss', $nombre, $ciudad, $direccion, $telefono, $estado);
 
         if ($insertStmt->execute()) {
-            header('Location: /index.php?action=sedes&mensaje=Sede creada correctamente');
+            header('Location: /vencimiento/index.php?action=sedes&mensaje=Sede creada correctamente');
             exit;
         } else {
             return $this->renderizar('sedes/crear', [
@@ -85,7 +85,7 @@ class SedesController extends BaseController {
 
         $sede_id = $_GET['id'] ?? '';
         if (empty($sede_id)) {
-            header('Location: /index.php?action=sedes');
+            header('Location: /vencimiento/index.php?action=sedes');
             exit;
         }
 
@@ -95,7 +95,7 @@ class SedesController extends BaseController {
 
         $sede = $this->obtenerSedePorId($sede_id);
         if (!$sede) {
-            header('Location: /index.php?action=sedes');
+            header('Location: /vencimiento/index.php?action=sedes');
             exit;
         }
 
@@ -150,7 +150,7 @@ class SedesController extends BaseController {
         $updateStmt->bind_param('sssssi', $nombre, $ciudad, $direccion, $telefono, $estado, $sede_id);
 
         if ($updateStmt->execute()) {
-            header('Location: /index.php?action=sedes&mensaje=Sede actualizada correctamente');
+            header('Location: /vencimiento/index.php?action=sedes&mensaje=Sede actualizada correctamente');
             exit;
         } else {
             return $this->renderizar('sedes/editar', [

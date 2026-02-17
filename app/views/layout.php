@@ -190,12 +190,10 @@ $usuario = isset($_SESSION['usuario_id']) ? true : false;
                     <?php
                     $action = $_GET['action'] ?? 'dashboard';
                     $menu = [
-                        ['url' => 'dashboard', 'label' => 'Dashboard', 'icon' => 'chart-line', 'roles' => ['superadmin', 'admin', 'encargado', 'vendedor']],
+                        ['url' => 'dashboard', 'label' => 'Dashboard', 'icon' => 'home', 'roles' => ['superadmin', 'admin', 'encargado', 'vendedor']],
                         ['url' => 'inventory', 'label' => 'Inventario', 'icon' => 'boxes', 'roles' => ['superadmin', 'admin', 'encargado']],
-                        ['url' => 'crear_producto', 'label' => 'Crear Producto', 'icon' => 'plus', 'roles' => ['superadmin', 'admin']],
-                        ['url' => 'agregar_lote', 'label' => 'Agregar Lote', 'icon' => 'cube', 'roles' => ['superadmin', 'admin', 'encargado']],
                         ['url' => 'alertas', 'label' => 'Alertas', 'icon' => 'bell', 'roles' => ['superadmin', 'admin', 'encargado']],
-                        ['url' => 'reportes', 'label' => 'Reportes', 'icon' => 'file-chart-line', 'roles' => ['superadmin', 'admin']],
+                        // ['url' => 'reportes', 'label' => 'Reportes', 'icon' => 'chart-line', 'roles' => ['superadmin', 'admin']],
                         ['url' => 'sedes', 'label' => 'Sedes', 'icon' => 'building', 'roles' => ['superadmin']],
                         ['url' => 'usuarios', 'label' => 'Usuarios', 'icon' => 'users', 'roles' => ['superadmin', 'admin']],
                     ];
@@ -206,7 +204,7 @@ $usuario = isset($_SESSION['usuario_id']) ? true : false;
                         if (!in_array($rol, $item['roles'])) continue;
                         $isActive = $action === $item['url'] ? 'active' : '';
                     ?>
-                        <a href="/index.php?action=<?php echo $item['url']; ?>"
+                        <a href="/vencimiento/index.php?action=<?php echo $item['url']; ?>"
                             class="nav-item flex items-center space-x-3 p-3 rounded text-gray-300 hover:text-white <?php echo $isActive; ?>">
                             <i class="fas fa-<?php echo $item['icon']; ?> w-5"></i>
                             <span><?php echo $item['label']; ?></span>
@@ -224,7 +222,7 @@ $usuario = isset($_SESSION['usuario_id']) ? true : false;
                             <p class="text-gray-400 text-xs"><?php echo ucfirst($_SESSION['rol'] ?? 'Usuario'); ?></p>
                         </div>
                     </div>
-                    <a href="/index.php?action=logout" class="w-full flex items-center justify-center space-x-2 p-2 bg-red-500 hover:bg-red-600 rounded transition">
+                    <a href="/vencimiento/index.php?action=logout" class="w-full flex items-center justify-center space-x-2 p-2 bg-red-500 hover:bg-red-600 rounded transition">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Salir</span>
                     </a>

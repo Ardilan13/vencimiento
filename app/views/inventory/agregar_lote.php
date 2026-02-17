@@ -126,7 +126,7 @@
                     <i class="fas fa-plus-circle mr-2"></i> Agregar Lote
                 </button>
                 <a 
-                    href="/index.php?action=inventory" 
+                    href="/vencimiento/index.php?action=inventory" 
                     class="flex-1 bg-gray-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-600 transition text-center"
                 >
                     <i class="fas fa-times-circle mr-2"></i> Cancelar

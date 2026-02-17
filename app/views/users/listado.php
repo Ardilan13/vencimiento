@@ -6,14 +6,14 @@
     <!-- Header -->
     <div class="mb-8 flex justify-between items-center">
         <h1 class="text-4xl font-bold text-gray-800">Gestión de Usuarios</h1>
-        <a href="/index.php?action=crear_usuario" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition">
+        <a href="/vencimiento/index.php?action=crear_usuario" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition">
             + Crear Usuario
         </a>
     </div>
 
     <!-- Filtros -->
     <div class="bg-white rounded-lg shadow p-6 mb-8">
-        <form method="GET" action="/index.php?action=usuarios" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <form method="GET" action="/vencimiento/index.php?action=usuarios" class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Rol</label>
                 <select name="rol" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 focus:border-transparent">
@@ -49,7 +49,7 @@
         <?php if (empty($usuarios)): ?>
             <div class="p-6 text-center text-gray-500">
                 <p class="text-lg">No hay usuarios registrados</p>
-                <a href="/index.php?action=crear_usuario" class="text-blue-600 hover:text-blue-800 mt-2 inline-block">Crear el primer usuario →</a>
+                <a href="/vencimiento/index.php?action=crear_usuario" class="text-blue-600 hover:text-blue-800 mt-2 inline-block">Crear el primer usuario →</a>
             </div>
         <?php else: ?>
             <div class="overflow-x-auto">
@@ -112,7 +112,7 @@
                                     </span>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <a href="/index.php?action=editar_usuario&id=<?php echo $user['id']; ?>" 
+                                    <a href="/vencimiento/index.php?action=editar_usuario&id=<?php echo $user['id']; ?>" 
                                        class="text-blue-600 hover:text-blue-800 font-semibold inline-block mr-4">
                                         Editar
                                     </a>

@@ -30,7 +30,7 @@
                     </div>
                 <?php endif; ?>
 
-                <form method="POST" action="/index.php?action=register" class="space-y-4">
+                <form method="POST" action="/vencimiento/index.php?action=register" class="space-y-4">
                     <!-- Nombre -->
                     <div>
                         <label for="nombre" class="block text-sm font-semibold text-gray-700 mb-2">
@@ -129,7 +129,7 @@
                 <div class="mt-6 text-center">
                     <p class="text-gray-600 text-sm">
                         ¿Ya tienes cuenta? 
-                        <a href="/index.php?action=login" class="text-purple-600 hover:text-pink-600 font-semibold transition">
+                        <a href="/vencimiento/index.php?action=login" class="text-purple-600 hover:text-pink-600 font-semibold transition">
                             Inicia sesión aquí
                         </a>
                     </p>

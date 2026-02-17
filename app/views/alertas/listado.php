@@ -6,7 +6,7 @@
     <!-- Header -->
     <div class="mb-8 flex justify-between items-center">
         <h1 class="text-4xl font-bold text-gray-800">Alertas de Vencimiento</h1>
-        <a href="/index.php?action=configurar_alertas" class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition">
+        <a href="/vencimiento/index.php?action=configurar_alertas" class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-3 rounded-lg hover:shadow-lg transition">
             ⚙️ Configurar
         </a>
     </div>
@@ -23,7 +23,7 @@
 
     <!-- Filtros -->
     <div class="bg-white rounded-lg shadow p-6 mb-8">
-        <form method="GET" action="/index.php?action=alertas" class="flex gap-4 items-end">
+        <form method="GET" action="/vencimiento/index.php?action=alertas" class="flex gap-4 items-end">
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Estado</label>
                 <select name="estado" class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 focus:border-transparent">
@@ -109,7 +109,7 @@
 
                     <?php if ($alerta['estado'] === 'activa'): ?>
                         <div class="flex gap-2">
-                            <form method="POST" action="/index.php?action=cambiar_estado_alerta" class="flex gap-2 flex-1">
+                            <form method="POST" action="/vencimiento/index.php?action=cambiar_estado_alerta" class="flex gap-2 flex-1">
                                 <input type="hidden" name="lote_id" value="<?php echo $alerta['lote_producto_id']; ?>">
                                 <button type="submit" name="estado" value="resuelto" class="flex-1 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition font-semibold">
                                     ✓ Resuelto

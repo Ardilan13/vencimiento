@@ -1,5 +1,5 @@
 <?php
-// app/views/dashboard/index.php
+// app/views/dashboard/vencimiento/index.php
 ?>
 <div class="space-y-6">
     <?php if ($usuario['rol'] === 'superadmin'): ?>
@@ -93,7 +93,7 @@
                                     <span class="status-badge badge-danger"><?php echo $sede['vencidos'] ?? 0; ?></span>
                                 </td>
                                 <td class="px-6 py-4 text-sm">
-                                    <a href="/index.php?action=inventory&sede=<?php echo $sede['id']; ?>" class="text-purple-600 hover:text-purple-800 font-semibold">
+                                    <a href="/vencimiento/index.php?action=inventory&sede=<?php echo $sede['id']; ?>" class="text-purple-600 hover:text-purple-800 font-semibold">
                                         Ver Inventario
                                     </a>
                                 </td>

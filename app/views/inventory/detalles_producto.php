@@ -151,10 +151,10 @@
 
     <!-- Acciones -->
     <div class="flex gap-3">
-        <a href="/index.php?action=agregar_lote" class="btn-primary">
+        <a href="/vencimiento/index.php?action=agregar_lote" class="btn-primary">
             <i class="fas fa-plus-circle mr-2"></i> Agregar Nuevo Lote
         </a>
-        <a href="/index.php?action=inventory" class="btn-primary bg-gray-500 hover:bg-gray-600">
+        <a href="/vencimiento/index.php?action=inventory" class="btn-primary bg-gray-500 hover:bg-gray-600">
             <i class="fas fa-arrow-left mr-2"></i> Volver al Inventario
         </a>
     </div>

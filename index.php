@@ -1,6 +1,4 @@
 <?php
-// index.php - Actualizado con nuevos controladores
-
 require_once 'app/config/Env.php';
 require_once 'app/config/Database.php';
 require_once 'app/controllers/BaseController.php';
@@ -110,7 +108,7 @@ try {
             break;
 
         default:
-            header('Location: /index.php?action=login');
+            header('Location: /vencimiento/index.php?action=login');
             exit;
     }
 } catch (Exception $e) {

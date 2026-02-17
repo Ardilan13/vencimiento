@@ -1,5 +1,5 @@
 <?php
-// app/views/reportes/index.php
+// app/views/reportes/vencimiento/index.php
 ?>
 
 <div class="container mx-auto px-4 py-8">
@@ -8,7 +8,7 @@
 
     <!-- Selectores de Filtros -->
     <div class="bg-white rounded-lg shadow p-6 mb-8">
-        <form method="GET" action="/index.php?action=reportes" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <form method="GET" action="/vencimiento/index.php?action=reportes" class="grid grid-cols-1 md:grid-cols-4 gap-4">
             
             <!-- Tipo de Reporte -->
             <div>
@@ -124,7 +124,7 @@
                 <p class="text-gray-700 font-semibold">
                     Total de registros: <span class="text-lg text-purple-600"><?php echo count($reporte['datos']); ?></span>
                 </p>
-                <a href="/index.php?action=exportar_reporte&tipo=<?php echo $tipo_reporte; ?>&sede=<?php echo $sede_id; ?>&fecha_desde=<?php echo $fecha_desde; ?>&fecha_hasta=<?php echo $fecha_hasta; ?>" 
+                <a href="/vencimiento/index.php?action=exportar_reporte&tipo=<?php echo $tipo_reporte; ?>&sede=<?php echo $sede_id; ?>&fecha_desde=<?php echo $fecha_desde; ?>&fecha_hasta=<?php echo $fecha_hasta; ?>" 
                    class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition font-semibold">
                     📥 Descargar CSV
                 </a>

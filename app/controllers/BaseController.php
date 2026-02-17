@@ -17,7 +17,7 @@ class BaseController {
 
         if (!isset($_SESSION['usuario_id'])) {
             if ($this->noEsRutaPublica()) {
-                header('Location: /index.php?action=login');
+                header('Location: /vencimiento/index.php?action=login');
                 exit;
             }
         } else {
@@ -42,7 +42,7 @@ class BaseController {
             $this->usuario = $result->fetch_assoc();
         } else {
             session_destroy();
-            header('Location: /index.php?action=login');
+            header('Location: /vencimiento/index.php?action=login');
             exit;
         }
     }
@@ -59,7 +59,7 @@ class BaseController {
 
     protected function validarAcceso($rolesPermitidos = []) {
         if (!$this->usuario) {
-            header('Location: /index.php?action=login');
+            header('Location: /vencimiento/index.php?action=login');
             exit;
         }
 
