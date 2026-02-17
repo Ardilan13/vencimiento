@@ -24,7 +24,7 @@
         <?php endif; ?>
 
         <form method="POST" action="/vencimiento/index.php?action=configurar_alertas" class="space-y-8">
-            
+
             <!-- Información de tipos de alerta -->
             <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
                 <h3 class="font-semibold text-blue-900 mb-4">Tipos de Alerta</h3>
@@ -53,8 +53,8 @@
                     ¿En cuántos días o menos deseas que sea CRÍTICO? (Ej: 1 = Hoy o mañana)
                 </p>
                 <input type="number" name="dias_critico" required min="0" max="30"
-                       value="<?php echo $configuraciones['dias_critico'] ?? 1; ?>"
-                       class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg">
+                    value="<?php echo $configuraciones['dias_critico'] ?? 1; ?>"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg">
                 <div class="mt-4 p-4 bg-orange-50 rounded-lg border border-orange-200">
                     <p class="text-orange-800 text-sm">
                         <strong>Ejemplo:</strong> Si configuras 1, los productos que vencen hoy o mañana (0-1 días) mostrarán alerta 🟠 CRÍTICA
@@ -71,8 +71,8 @@
                     ¿En cuántos días o menos deseas que sea WARNING? (Ej: 7 = Una semana)
                 </p>
                 <input type="number" name="dias_warning" required min="1" max="90"
-                       value="<?php echo $configuraciones['dias_warning'] ?? 7; ?>"
-                       class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg">
+                    value="<?php echo $configuraciones['dias_warning'] ?? 7; ?>"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg">
                 <div class="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
                     <p class="text-yellow-800 text-sm">
                         <strong>Ejemplo:</strong> Si configuras 7, los productos que vencen en 7 días o menos mostrarán alerta 🟡 WARNING
@@ -88,7 +88,7 @@
                         <span class="text-2xl">🔴</span>
                         <p class="text-gray-700">
                             <strong>Vencido:</strong> Fecha vencimiento < hoy
-                        </p>
+                                </p>
                     </div>
                     <div class="flex items-center gap-4">
                         <span class="text-2xl">🟠</span>
@@ -112,7 +112,6 @@
                     <li>✓ Estas configuraciones se aplican a todo el sistema</li>
                     <li>✓ Se pueden cambiar en cualquier momento</li>
                     <li>✓ Las alertas se recalculan automáticamente</li>
-                    <li>✓ Recomendado: Crítico=1, Warning=7</li>
                 </ul>
             </div>
 

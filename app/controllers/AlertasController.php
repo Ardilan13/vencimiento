@@ -1,11 +1,13 @@
 <?php
 // app/controllers/AlertasController.php
 
-class AlertasController extends BaseController {
+class AlertasController extends BaseController
+{
 
-    public function listado() {
+    public function listado()
+    {
         $this->validarAcceso(['superadmin', 'admin', 'encargado']);
-        
+
         $usuario = $this->usuarioActual();
         $filtro_tipo = $_GET['tipo'] ?? '';
         $filtro_estado = $_GET['estado'] ?? 'activa';
@@ -22,7 +24,8 @@ class AlertasController extends BaseController {
         ]);
     }
 
-    public function configurar() {
+    public function configurar()
+    {
         $this->validarAcceso(['superadmin', 'admin']);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -38,10 +41,12 @@ class AlertasController extends BaseController {
         ]);
     }
 
-    private function guardarConfiguracion() {
+    private function guardarConfiguracion()
+    {
         $dias_critico = $_POST['dias_critico'] ?? 1;
         $dias_warning = $_POST['dias_warning'] ?? 7;
         $errores = [];
+        $clave = 'alertas_config';
 
         if (empty($dias_critico) || !is_numeric($dias_critico) || $dias_critico < 0) {
             $errores[] = 'Días crítico debe ser un número válido';
@@ -76,7 +81,7 @@ class AlertasController extends BaseController {
         } else {
             $insertQuery = "INSERT INTO configuraciones (clave, valor) VALUES (?, ?)";
             $insertStmt = $this->db->prepare($insertQuery);
-            $insertStmt->bind_param('ss', 'alertas_config', $config_valor);
+            $insertStmt->bind_param('ss', $clave, $config_valor);
             $resultado = $insertStmt->execute();
         }
 
@@ -91,7 +96,8 @@ class AlertasController extends BaseController {
         }
     }
 
-    public function cambiar_estado() {
+    public function cambiar_estado()
+    {
         $this->validarAcceso(['superadmin', 'admin', 'encargado']);
 
         $lote_id = $_POST['lote_id'] ?? '';
@@ -112,7 +118,8 @@ class AlertasController extends BaseController {
         }
     }
 
-    private function obtenerAlertas($usuario, $filtro_tipo = '', $filtro_estado = '') {
+    private function obtenerAlertas($usuario, $filtro_tipo = '', $filtro_estado = '')
+    {
         $query = "SELECT av.*, p.nombre, p.codigo_sku, lp.fecha_vencimiento,
                          DATEDIFF(lp.fecha_vencimiento, CURDATE()) as dias_para_vencer,
                          lp.cantidad_disponible, s.nombre as sede_nombre
@@ -161,14 +168,15 @@ class AlertasController extends BaseController {
                 $row['tipo'] = 'warning';
                 $row['clase_color'] = 'bg-yellow-100 border-l-4 border-yellow-500';
             }
-            
+
             $alertas[] = $row;
         }
 
         return $alertas;
     }
 
-    private function obtenerConfiguraciones() {
+    private function obtenerConfiguraciones()
+    {
         $query = "SELECT * FROM configuraciones WHERE clave = 'alertas_config'";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
@@ -186,4 +194,3 @@ class AlertasController extends BaseController {
         ];
     }
 }
-?>
